@@ -1,0 +1,49 @@
+Compiler lab report
+Deadline: 14 April 2020, Tuesday
+
+<------------------------------------------>
+
+FORMATE:
+        ->Experiment no
+        ->Experiment name
+        ->Objective
+        ->Source code
+        ->Input
+        ->Output
+<------------------------------------------->
+
+Experiment Names=>
+        1. Write a program to check whether a given string is a comment or not.
+        1. Write a program to devide comment and not comment section.
+        3. Write a program to check whether a given string is valid identifier or not.
+        4. Write a program to classify the operators and print their type.
+        5. Write a program to check the valid or invalid string of following:
+                i. a*
+                ii. a*b
+        6. Write a program to check wherther a given string is valid expression or not.
+        7. Write a program to determine the first and follow of a given grammar.
+        
+<------------------------------------------->
+
+Objectives=>
+        1. In source code of a program, programmer writes comments for understand easily the source code. But those comments are not     
+           part of the code. This program is about to determine a given line is a comment or not.
+      
+        2. In source code of a program, programmer writes comments for understand easily the source code. But those comments are not     
+           part of the code. This program is about to determine the type of existing comments in a given string.
+    
+        3. In programming there are some rules for write an identifier name. Invalid identifier name are not acceptable for             
+           programming. This programming is for define a identifier name is valid or invalid.
+           
+        4. In C programming there are several types of operator (arithmetic operator,assignment operator, logical operator etc.). This 
+           program takes input operator and define the type of that operator.
+       
+        5. Regular expressions are part of grammar. It’s used for how a machine works. It will accept or reject the input. This program 
+           is about to determine a given string is accepted or not for expression ‘a*b’ or 'a*'.
+       
+        6. In programming language expression is the main thing. Without expression no program can run.This program can determine an
+           expression is valid or not;
+   
+        7. This program is about to determine the first and follow of a given CFG.
+        
+
