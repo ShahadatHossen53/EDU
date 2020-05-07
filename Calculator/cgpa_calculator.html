@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Input field from loop</title>
+		<style>
+			button{
+				color: green;
+			}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<h3>Theory Courses</h3>
+		
+		
+		<button onclick="addCourse('theory')">Add</button>
+		<button onclick="removeCourse('theory')">Remove</button>
+		<br>
+		<h3 id='theory'></h3>
+		<hr>
+		<h3>Lab Courses</h3>
+		<br>
+		
+		<button onclick="addCourse('lab')">Add</button>
+		<button onclick="removeCourse('lab')">Remove</button>
+		<h3 id='lab'></h3>
+		<hr><br>
+		
+		<button onclick="result()">Result</button><br><hr><br>
+		
+		<h3 id="result"></h3>
+		
+		<h3 id="credit"></h3>
+		
+		<br><br>
+		
+		<script>
+			var t=0, l=0, tCredit=0, lCredit=0;
+			var gLetter = ['', 'A', 'A-', 'B+','B', "B-", "C+", "C", "C-", "D+", "D", "F"];
+			var lGrade = ["", 4, 3.7, 3.3, 3, 2.7, 2.3, 2, 1.7, 1.3, 1, 0];
+
+			function addCourse(course){
+				var indx;
+				
+				if(course=="theory"){
+					t++;
+					tCredit+=3
+					indx = t;
+				}
+				else{
+					l++;
+					lCredit+=1.5;
+					indx = l;
+				}
+				var node = document.createElement("select");
+				node.setAttribute("id", course+indx);
+				for(i=0; i<12; i++){
+					var childnode = document.createElement("option");
+					childnode.setAttribute('value', lGrade[i]);
+					node.appendChild(childnode);
+					var textnode = document.createTextNode(gLetter[i]);
+					childnode.appendChild(textnode);
+					document.getElementById(course).appendChild(node);
+				}
+			}
+			function removeCourse(course){
+				var indx;
+				if(course=="theory"){
+					indx = t;
+					t--;
+					tCredit-=3;
+				}
+				else{
+					indx = l;
+					l--;
+					lCredit-=1.5;
+				}
+				var remove = document.getElementById(course);
+				remove.removeChild(remove.childNodes[indx-1]);
+			}
+
+
+			function result(){
+				var t_grade = 0, l_grade = 0, getId = "", cgpa;
+				for(i=1; i<=t; i++){
+					getId = "theory"+i;
+					t_grade += parseFloat(document.getElementById(getId).value);
+				}
+				t_grade *= 3;
+				for(i=1; i<=l; i++){
+					getId = "lab"+i;
+					l_grade += parseInt(document.getElementById(getId).value);
+				}
+				l_grade *= 1.5
+				cgpa = (t_grade+l_grade)/(tCredit+lCredit);
+				if(!Number(cgpa)){
+					document.getElementById('result').innerHTML = "Please select all input";
+				}
+				else{
+					document.getElementById('result').innerHTML = "Result = "+cgpa.toFixed(2);
+				}
+				
+			}
+		</script>
+	</body>
+</html>
