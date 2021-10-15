@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Shahadat Hossen",
+        "id": "181008112",
+        "cgpa": 3.38,
+        "isProgrammer": true
+    },
+    {
+        "name": "Shameema Akter Deaijy",
+        "id": "181009112",
+        "cgpa": 3.33,
+        "isProgrammer": false
+    }
+]
