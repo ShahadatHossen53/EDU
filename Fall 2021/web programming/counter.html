@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1 id="display_counter">0</h1>
+    <br>
+    <input type="submit" onclick="counter()" value="Count">
+    <input type="submit" onclick="reset()" value="Reset">
+
+    <script>
+        var num = 0;
+        function counter(){
+            num++;
+
+            document.getElementById('display_counter').innerHTML = num;
+        }
+        function reset(){
+            num = 0;
+            document.getElementById('display_counter').innerHTML = num;
+        }
+    </script>
+</body>
+</html>
