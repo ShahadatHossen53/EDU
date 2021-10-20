@@ -7,7 +7,7 @@ function prectice(){
 }
 
 function csvToHTML(){
-    var result = "";
+    var result = "[<br>";
     /*var e_counter = 1;
     for (let r = 0; r < table.getRowCount(); r++){
         var counter = 0;
@@ -47,7 +47,8 @@ function csvToHTML(){
         '",<br>  "origin": "'+table.getString(r, 14)+
         '",<br>  "f_ionisation_energie": "'+table.getString(r, 16)+
         '",<br>  "oxidation_states": '+table.getString(r, 17)+
-        ',<br>  "phase": "'+table.getString(r, 15)+'"<br>},<br>'
+        ',<br>  "electron_config": ['+table.getString(r, 18)+
+        '],<br>  "phase": "'+table.getString(r, 15)+'"<br>},<br>'
     }
     document.getElementById('demo').innerHTML = result+"<br>]";
 }

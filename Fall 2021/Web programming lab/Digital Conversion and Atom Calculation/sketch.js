@@ -16,6 +16,7 @@ var display_element_number = "";
 var display_element_symbol = "";
 var display_element_index = 0;
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(220);
@@ -28,6 +29,7 @@ function setup() {
   display_color = periodic_Table[0].cell_color;
 
   
+  
   //csvToHTML();
 }
 
@@ -35,15 +37,21 @@ function draw() {
   isInCell = false;
   background(220);
   if(is_display_peiodic_table){
+    //resizeCanvas(windowWidth, windowHeight);
+    //background(220);
     show_periodic_table();
     display_selected_element(width/2-100, 80, 0.8);
   }
   else{
     //display_selected_element(width/2-100, 180, 2);
-    display_selected_element(mouseX, mouseY, 2);
+    //resizeCanvas(windowWidth, 300);
+    //background(220);
+    //display_selected_element(width/2-100, 150, 1.5);
+    display_electron(display_element_index+1);
   }
   
   //prectice();
+  
 
 }
 
@@ -51,7 +59,7 @@ function draw() {
 function doubleClicked(){
   if(isInCell){
     is_display_peiodic_table = !is_display_peiodic_table;
-    show_selected_element(display_element_number, display_element_name, display_element_symbol);
+    //show_selected_element(display_element_number, display_element_name, display_element_symbol);
     
   }
   else if(!is_display_peiodic_table){
